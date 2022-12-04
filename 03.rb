@@ -3,7 +3,7 @@ require 'set'
 module Day03
   class << self
     def part_one(input)
-      mapped_input = input.map { |line| line.chars.each_slice(line.length / 2).map(&:join)}
+      mapped_input = input.map { |line| line.chars.each_slice(line.length / 2).map(&:join) }
       mapped_same_inputs = mapped_input.map do |line|
         get_intersection(line[0], line[1])
       end
