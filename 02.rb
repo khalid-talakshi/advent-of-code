@@ -23,8 +23,8 @@ module Day02
         if op_hand == p_hand
           return 3
         elsif op_hand == :rock && p_hand == :paper ||
-          op_hand == :paper && p_hand == :scissors ||
-          op_hand == :scissors && p_hand == :rock
+              op_hand == :paper && p_hand == :scissors ||
+              op_hand == :scissors && p_hand == :rock
           return 6
         else
           return 0
@@ -53,24 +53,25 @@ module Day02
     end
 
     private
+
     def input_to_rounds(input)
       input.map do |line|
         op_hand = nil
         p_hand = nil
         line.split(" ").map do |hand|
           case hand
-            when "A"
-              op_hand = :rock
-            when "B"
-              op_hand = :paper
-            when "C"
-              op_hand = :scissors
-            when "X"
-              p_hand = :rock
-            when "Y"
-              p_hand = :paper
-            when "Z"
-              p_hand = :scissors
+          when "A"
+            op_hand = :rock
+          when "B"
+            op_hand = :paper
+          when "C"
+            op_hand = :scissors
+          when "X"
+            p_hand = :rock
+          when "Y"
+            p_hand = :paper
+          when "Z"
+            p_hand = :scissors
           end
         end
         Round.new(op_hand, p_hand)
@@ -96,18 +97,18 @@ module Day02
         p_hand = nil
         line.split(" ").map do |hand|
           case hand
-            when "A"
-              op_hand = :rock
-            when "B"
-              op_hand = :paper
-            when "C"
-              op_hand = :scissors
-            when "X"
-              p_hand = hand_to_make(op_hand, :lose)
-            when "Y"
-              p_hand = hand_to_make(op_hand, :draw)
-            when "Z"
-              p_hand = hand_to_make(op_hand, :win)
+          when "A"
+            op_hand = :rock
+          when "B"
+            op_hand = :paper
+          when "C"
+            op_hand = :scissors
+          when "X"
+            p_hand = hand_to_make(op_hand, :lose)
+          when "Y"
+            p_hand = hand_to_make(op_hand, :draw)
+          when "Z"
+            p_hand = hand_to_make(op_hand, :win)
           end
         end
         Round.new(op_hand, p_hand)
