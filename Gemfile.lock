@@ -4,6 +4,7 @@ GEM
     advent_of_code_cli (0.1.3)
       thor (>= 1.2.0)
     ast (2.4.2)
+    byebug (11.1.3)
     json (2.6.2)
     parallel (1.22.1)
     parser (3.1.3.0)
@@ -34,6 +35,7 @@ PLATFORMS
 
 DEPENDENCIES
   advent_of_code_cli
+  byebug (~> 11.1)
   rubocop
   set
 
